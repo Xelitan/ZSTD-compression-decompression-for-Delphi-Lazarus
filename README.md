@@ -34,3 +34,12 @@ If you want to compress huge files you should divide them into chunks, compress 
 
 ## Compression
 Compression level - anything between 1 (fast, big file) and 20 (slow, small file) is fine. Max is 22 but is very slow. Negative values are also possible but files are just impractically big.
+
+## Linux (Debian, Ubuntu, Mint)
+
+1) apt install apt-file libzstd-dev
+2) apt-file search libzstd.so
+It will list you how your libzstd.so files are named *exactly* and where they are
+3) Open ZstdLib.pas and edit "const ZSTD_LIB"
+4) Change the value of that const. Enter filename (excluding path) found in step 2
+5) Compile and run
